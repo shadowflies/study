@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+    <div id="box" style="width: 200px;height: 200px;background-color: #913030;"></div>
 </body>
 <script>
     //1.原型链继承//让一个构造函数的原型是另一个类型的实例，那么这个构造函数new出来的实例就具有该实例的属性
@@ -163,6 +163,95 @@
     // oo.arr[0].push(888)
     // console.log(origin)
     // console.log(oo)
+
+    // 防抖节流
+    // var b = document.getElementById('box')
+    // function debounce(fun, wait) {
+    //     let timer;
+    //     return (...args) => {
+    //         if (timer) {
+    //             clearTimeout(timer);
+    //         }
+    //         timer = setTimeout(() => {
+    //             fun(...args);
+    //         }, wait)
+    //     }
+    // }
+    // b.onmouseover = debounce(() => { console.log(1) }, 1000)
+
+    // var b = document.getElementById('box')
+    // function throttle2(fun, wait) {
+    //     let timer;
+    //     return (...args) => {
+    //         if (timer) {
+    //             return
+    //         } else {
+    //             timer = setTimeout(() => {
+    //                 timer = null;
+    //                 fun(...args);
+    //             }, wait)
+    //         }
+    //     }
+    // }
+
+    // b.onmouseover = throttle2(() => { console.log(1) }, 2000)
+
+
+
+    // 移动端适配
+    // (function flexible(window, document) {//首先是一个立即执行函数，执行的时候传入参数window,document
+    //     var docEl = document.documentElement //返回文档的root元素，即根元素html
+    //     var dpr = window.devicePixelRatio || 1 //获取设备的dpr，即当前设置下物理像素与虚拟像素的比值
+    //     //调整body标签的fontsize
+    //     //设置默认字体的大小，默认字体的大小继承自body
+    //     function setBodyFontsize() {
+    //         if (document.body) {
+    //             document.body.style.fontsize = (12 * dpr) + 'px'
+    //         } else {
+    //             document.addEventListener('DoMcontentLoaded', setBodyFontsize)
+    //         }
+    //     }
+
+    //     setBodyFontsize();
+    //     //设置 1rem=view width /10
+    //     function setRemunit() {
+    //         var rem = docEl.clientwidth / 10
+    //         docEl.style.fontsize = rem + 'px'
+    //     }
+    //     setRemUnit();
+    //     //在页面resize或者pageshow重新设置rem
+    //     window.addEventListener('resize', setRemUnit)
+    //     window.addEventListener('pageshow', function (e) {
+    //         if (e.persisted) {//某些浏览器，重新展示页面时，走的是页面展示缓存
+    //             setRemunit();
+    //         }
+    //     })
+    //     //检测0.5px的支持，支持则root元素的class有hairlines//解决1px在高清屏多像素问题
+    //     if (dpr >= 2) {
+    //         var fakeBody = document.createElement('doby');
+    //         var testElement = document.createElement('div');
+    //         testElement.style.border = '.5px solid transparent'
+    //         fakeBody.appendchild(testElement);
+    //         docEl.appendchild(fakeBody);
+    //         if (testElement.offsetHeight === 1) { docEl.classList.add('hairlines') }
+    //         docEl.removechild(fakeBody)
+    //     }
+    // }(window, document))
+
+    // 表单验证
+    // `
+    // <el-form : model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px"class="demo-ruleForm">
+    //     <el-form-item label="项目编码"prop="code">
+    //         <el-input v-model="ruleForm.code">
+    //     </el-input></el-form-item>
+    // </el-form>
+    // `
+    //data中写rules规则，是一个数组，名字是标签里面的prop属性值
+    // rules: {
+    //     code:[{required:true,message:'请输入项目编码',trigger:'blur'},
+    // ]}
+
+
 
 </script>
 
