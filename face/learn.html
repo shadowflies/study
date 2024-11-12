@@ -180,6 +180,20 @@
     // b.onmouseover = debounce(() => { console.log(1) }, 1000)
 
     // var b = document.getElementById('box')
+    // function debounce(func, delay){
+    //     let timeoutId;
+    //     return function(...args){
+    //         if(timeoutId){
+    //             clearTimeout(timeoutId);
+    //         }
+    //         timeoutId = setTimeout(()=>{
+    //             func.apply(this, args)
+    //         }, delay)
+    //     }
+    // }
+    // b.onmouseover = debounce(() => { console.log(1) }, 1000)
+
+    // var b = document.getElementById('box')
     // function throttle2(fun, wait) {
     //     let timer;
     //     return (...args) => {
@@ -193,8 +207,20 @@
     //         }
     //     }
     // }
-
     // b.onmouseover = throttle2(() => { console.log(1) }, 2000)
+
+    // var b = document.getElementById('box')
+    // function throttle(func, delay){
+    //     let lastNum = 0;
+    //     return function(...args){
+    //         const now = Date.now()
+    //         if(now - lastNum >= delay){
+    //             func.apply(this, args)
+    //             lastNum = now
+    //         }
+    //     }
+    // }
+    // b.onmouseover = throttle(() => { console.log(1) }, 2000)
 
 
 
