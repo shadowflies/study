@@ -10,7 +10,24 @@
 <body>
     <div id="box" style="width: 200px;height: 200px;background-color: #913030;"></div>
 </body>
+
 <script>
+function F(){
+    
+}
+Object.prototype = function a() {
+       console.log('a');
+   }
+Function.prototype = function b() {
+       console.log('b');
+   }
+let f = new F();
+// f.a();
+// f.b();
+// F.a();
+// F.b();
+</script>
+<script type="text/javascript" src="learn.js">
     //1.原型链继承//让一个构造函数的原型是另一个类型的实例，那么这个构造函数new出来的实例就具有该实例的属性
     // function Parent() {
     //     this.isshow = true
@@ -94,26 +111,26 @@
     // 子类的构造方法中必须调用super方法，且只有在调用了super()之后才能使用this,
     // 因为子类的this对象是继承父类的this对象!然后对其进行加工，
     // 而super方法表示的是父类的构造函数，用来新建父类的this对象
-    class Animal {
-        constructor(kind) {
-            this.kind = kind
-        }
-        getkind() {
-            return this.kind
-        }
-    }
-    //继承Anima1
-    class cat extends Animal {
-        constructor(name) {//子类的构造方法中必须先调用super方法
-            super('cat');
-            this.name = name;
-        }
-        getcatInfo() {
-            console.log(this.name + ':' + super.getkind())
-        }
-    }
-    const cat1 = new cat('buding');
-    cat1.getcatInfo();//buding: cat 
+    // class Animal {
+    //     constructor(kind) {
+    //         this.kind = kind
+    //     }
+    //     getkind() {
+    //         return this.kind
+    //     }
+    // }
+    // //继承Anima1
+    // class cat extends Animal {
+    //     constructor(name) {//子类的构造方法中必须先调用super方法
+    //         super('cat');
+    //         this.name = name;
+    //     }
+    //     getcatInfo() {
+    //         console.log(this.name + ':' + super.getkind())
+    //     }
+    // }
+    // const cat1 = new cat('buding');
+    // cat1.getcatInfo();//buding: cat 
     // 优点:语法简单易懂,操作更方便。
     // 缺点:并不是所有的浏览器都支持class关键字
 
